@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparateur de Spécifications Techniques pour Équipements Industriels | Saisie des données et comparaison</title>
+    <meta name="description" content="Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --primary-color: #00bcd4;
+            --secondary-color: #616161;
+            --border-color: #424242;
+            --font-family-mono: 'Roboto Mono', monospace;
+            --font-family-sans: 'Inter', sans-serif;
+            --card-bg: #2a2a2a;
+        }
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap');
+        header {
+            background-color: var(--card-bg);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-family: var(--font-family-mono);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        header p {
+            color: var(--secondary-color);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        main {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: var(--primary-color);
+            font-family: var(--font-family-mono);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-family: var(--font-family-mono);
+        }
+        textarea, input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            background-color: #333;
+            color: var(--text-color);
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 100px;
+            font-family: var(--font-family-mono);
+            font-size: 0.9rem;
+        }
+        input[type="file"] {
+            padding: 8px;
+            cursor: pointer;
+        }
+        input[type="file"]::file-selector-button {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #757575;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #00acc1;
+        }
+        #tool-result {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1.5rem;
+            min-height: 200px;
+            white-space: pre-wrap;
+            font-family: var(--font-family-mono);
+            font-size: 0.85rem;
+            overflow-x: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        #tool-result h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px dotted var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #3a3a3a;
+            color: var(--primary-color);
+            font-weight: normal;
+            font-family: var(--font-family-mono);
+        }
+        .comparison-table td {
+            background-color: #2a2a2a;
+        }
+        .comparison-table tr:nth-child(even) td {
+            background-color: #2e2e2e;
+        }
+        .section-separator {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 2rem 0;
+        }
+        .seo-section {
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .seo-section h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .seo-section p {
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            max-width: 800px;
+            margin: 0 auto 1rem auto;
+        }
+        .seo-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .seo-section li {
+            background-color: #333;
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: var(--text-color);
+            font-family: var(--font-family-mono);
+        }
+        .headline-variants {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .headline-variants h2 {
+            margin-bottom: 1rem;
+        }
+        .headline-variants ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .headline-variants li {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            background-color: #2a2a2a;
+            border-left: 3px solid var(--primary-color);
+            font-family: var(--font-family-mono);
+            font-size: 0.9rem;
+        }
+        .headline-variants strong {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com">
+    <meta property="og:title" content="Comparateur de Spécifications Techniques pour Équipements Industriels">
+    <meta property="og:description" content="Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.">
+    <meta property="og:url" content="https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Comparateur de Spécifications Techniques pour Équipements Industriels", "description": "Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.", "url": "https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="comparateur-de-specifications-techniques-pour-e-2d51b098" data-runtime-mode="analysis_tool">
+    <header>
+        <h1>Comparateur de Spécifications Techniques pour Équipements Industriels</h1>
+        <p>Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Saisie des données et comparaison</h2>
+            <form id="tool-form">
+                <label for="data-input">Collez les spécifications (texte brut) ou téléchargez un PDF :</label>
+                <textarea id="data-input" placeholder="Collez ici les fiches techniques de vos machines. Séparez les blocs de texte pour chaque machine (ex: '---' pour nouvelle machine)." rows="10"></textarea>
+                <input type="file" id="file-upload" accept=".pdf" multiple>
+                <button type="submit" id="tool-submit">Comparer les équipements</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Résultats de la comparaison</h2>
+            <div id="tool-result">
+                <h3 id="result-headline">Aperçu des performances comparées</h3>
+                <p>Vos comparaisons détaillées apparaîtront ici. L'outil extraira les données clés et les présentera sous forme de tableau ou de liste structurée pour une analyse rapide.</p>
+            </div>
+        </div>
+
+        <div class="section-separator"></div>
+
+        <div class="headline-variants card">
+            <h2>Titres optimisés pour votre communication</h2>
+            <p>Découvrez différentes approches pour présenter votre proposition de valeur. Ces titres sont conçus pour capter l'attention selon votre objectif.</p>
+
+            <h3>Variantes SEO:</h3>
+            <ul>
+                <li><strong>SEO:</strong> Comparateur Fiches Techniques Industrielles: Optimisez vos Achats Machines</li>
+                <li><strong>SEO:</strong> Analyse Spécifications Équipements BTP & Industrie: Gagnez en Efficacité</li>
+                <li><strong>SEO:</strong> Comparaison Technique Industrielle: Guide d'Achat Équipement Professionnel</li>
+            </ul>
+
+            <h3>Variantes "Clickbait":</h3>
+            <ul>
+                <li><strong>Clickbait:</strong> L'Erreur Fatale que Vous Faites en Achetant Vos Machines Industrielles (Jusqu'à Maintenant !)</li>
+                <li><strong>Clickbait:</strong> Secret Révélé: Comment 1 Seule Astuce Peut Doubler la Rentabilité de Votre Parc Machines</li>
+                <li><strong>Clickbait:</strong> Ne Payez Plus Jamais Trop Cher Pour Vos Équipements Industriels: Voici Pourquoi</li>
+            </ul>
+
+            <h3>Variantes "Expert":</h3>
+            <ul>
+                <li><strong>Expert:</strong> Optimisation Stratégique des Acquisitions d'Actifs Industriels par l'Analyse Spécifique</li>
+                <li><strong>Expert:</strong> Ingénierie Comparée: Décryptage des Performances pour la Sélection d'Équipements de Pointe</li>
+                <li><strong>Expert:</strong> Architecture Technologique des Machines: Évaluation Comparative et Synthèse Décisionnelle</li>
+            </ul>
+
+            <h3>Variantes "Soft":</h3>
+            <ul>
+                <li><strong>Soft:</strong> Trouvez l'Équipement Idéal pour Votre Activité, Simplement et Rapidement</li>
+                <li><strong>Soft:</strong> Facilitez Vos Décisions d'Achat avec une Comparaison Claire de Machines Industrielles</li>
+                <li><strong>Soft:</strong> Un Outil Pratique pour Choisir Vos Équipements Industriels en Toute Confiance</li>
+            </ul>
+
+            <h3>Variantes "Commercial":</h3>
+            <ul>
+                <li><strong>Commercial:</strong> Décuplez Votre ROI: Notre Comparateur Révolutionne Vos Achats Industriels</li>
+                <li><strong>Commercial:</strong> Gagnez en Compétitivité: L'Outil Essentiel pour Vos Acquisitions d'Équipements</li>
+                <li><strong>Commercial:</strong> Performez Mieux, Dépensez Moins: Comparez et Achetez Malin</li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="seo-section">
+        <h3>Optimisation des achats B2B avec notre comparateur de fiches techniques</h3>
+        <p>Dans l'environnement industriel compétitif, chaque décision d'investissement compte. Notre plateforme vous permet d'analyser en profondeur les spécifications techniques des machines, des équipements de production aux engins de BTP. Ne vous fiez plus aux seules brochures : utilisez une comparaison structurée pour évaluer la consommation énergétique, la capacité de production, les normes de sécurité, la maintenance préventive, le coût total de possession (TCO) et d'autres critères essentiels. Que vous soyez un acheteur industriel, un responsable de parc machines ou un ingénieur d'études, notre outil est conçu pour vous offrir une vision claire et objective, facilitant ainsi des choix stratégiques éclairés et rentables pour votre entreprise en France.</p>
+        <ul>
+            <li>comparateur machine industrielle</li>
+            <li>fiches techniques équipement btp</li>
+            <li>analyse comparative machines production</li>
+            <li>optimisation achat industriel</li>
+            <li>comparaison performance machines</li>
+            <li>investissement équipement usine</li>
+            <li>sélection matériel professionnel</li>
+            <li>comparer tracteur agricole spécifications</li>
+            <li>comparer pelle hydraulique données techniques</li>
+            <li>analyse consommation machines</li>
+            <li>comparateur engins TP</li>
+            <li>logiciel comparaison industrielle</li>
+            <li>outil aide décision achat machine</li>
+            <li>spécifications techniques B2B</li>
+            <li>comparatif chariots élévateurs</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            compareData();
+        });
+
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                let allText = '';
+                let filesProcessed = 0;
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file.type === "application/pdf") {
+                        // In a real-world scenario, you'd use a library like pdf.js to extract text.
+                        // For this in-browser only example, we'll simulate PDF processing for simplicity.
+                        // A more robust solution would involve server-side PDF parsing.
+                        allText += `--- PDF '${file.name}' (simulation d'extraction) ---\n`;
+                        allText += `Nom: ${file.name}\nTaille: ${Math.round(file.size / 1024)} Ko\n`;
+                        allText += `Capacité: [Valeur Estimée]\nPoids: [Valeur Estimée]\nConsommation: [Valeur Estimée]\n`;
+                        allText += `Puissance: [Valeur Estimée]\nFiabilité: [Valeur Estimée]\nCoût: [Valeur Estimée]\n`;
+                        allText += `--- Fin de simulation PDF '${file.name}' ---\n\n`;
+                        filesProcessed++;
+                        if (filesProcessed === files.length) {
+                             document.getElementById('data-input').value = allText.trim();
+                        }
+                    } else {
+                        // For other file types, or if no PDF.js, simply inform user or ignore.
+                        console.warn(`Type de fichier non pris en charge pour l'extraction de texte: ${file.type}`);
+                        // Optionally, add a placeholder or error message
+                        allText += `--- Fichier non-PDF ignoré: ${file.name} ---\n\n`;
+                        filesProcessed++;
+                        if (filesProcessed === files.length) {
+                             document.getElementById('data-input').value = allText.trim();
+                        }
+                    }
+                }
+            }
+        });
+
+        function compareData() {
+            const rawData = document.getElementById('data-input').value.trim();
+            const resultDiv = document.getElementById('tool-result');
+
+            if (!rawData) {
+                resultDiv.innerHTML = '<h3>Aperçu des performances comparées</h3><p>Veuillez coller des données ou télécharger un fichier pour commencer la comparaison.</p>';
+                return;
+            }
+
+            const machines = rawData.split(/---+/g).filter(block => block.trim() !== '');
+            const parsedData = machines.map(parseMachineData);
+
+            if (parsedData.length === 0) {
+                resultDiv.innerHTML = '<h3>Aperçu des performances comparées</h3><p>Aucune donnée valide n\'a été trouvée pour la comparaison. Veuillez vérifier le format de vos entrées.</p>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<h3>Résultats de la Comparaison Détaillée</h3>';
+
+            if (parsedData.length === 1) {
+                resultDiv.innerHTML += '<p>Une seule machine détectée. Pour une comparaison, veuillez ajouter au moins deux ensembles de spécifications.</p>';
+                resultDiv.innerHTML += `<h4>${parsedData[0].Nom || 'Machine Unique'}</h4>`;
+                resultDiv.innerHTML += '<ul style="list-style: none; padding: 0;">';
+                for (const key in parsedData[0]) {
+                    if (parsedData[0].hasOwnProperty(key)) {
+                        resultDiv.innerHTML += `<li style="margin-bottom: 0.3rem;"><strong style="color: var(--primary-color); display: inline-block; width: 120px;">${key}:</strong> ${parsedData[0][key]}</li>`;
+                    }
+                }
+                resultDiv.innerHTML += '</ul>';
+                return;
+            }
+
+            const allKeys = [...new Set(parsedData.flatMap(Object.keys))];
+            const relevantKeys = ['Nom', 'Modèle', 'Puissance', 'Consommation', 'Capacité', 'Poids', 'Dimensions', 'Prix', 'TCO', 'Fiabilité', 'Maintenance'].filter(key => allKeys.includes(key));
+            
+            let tableHtml = '<table class="comparison-table"><thead><tr>';
+            tableHtml += '<th>Caractéristique</th>';
+            parsedData.forEach((machine, index) => {
+                tableHtml += `<th>Machine ${index + 1}<br>${machine.Nom || 'Non spécifié'}</th>`;
+            });
+            tableHtml += '</tr></thead><tbody>';
+
+            relevantKeys.forEach(key => {
+                tableHtml += `<tr><td>${key}</td>`;
+                parsedData.forEach(machine => {
+                    tableHtml += `<td>${machine[key] || '-'}</td>`;
+                });
+                tableHtml += '</tr>';
+            });
+
+            tableHtml += '</tbody></table>';
+            resultDiv.innerHTML += tableHtml;
+        }
+
+        function parseMachineData(textBlock) {
+            const data = {};
+            const lines = textBlock.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+            
+            lines.forEach(line => {
+                const parts = line.split(':');
+                if (parts.length >= 2) {
+                    const key = parts[0].trim().replace(/\s+/g, ' '); // Normalize spaces
+                    const value = parts.slice(1).join(':').trim();
+                    
+                    // Simple heuristic to clean up keys for common attributes
+                    let normalizedKey = key.toLowerCase();
+                    if (normalizedKey.includes('nom') || normalizedKey.includes('désignation')) data.Nom = value;
+                    else if (normalizedKey.includes('modèle') || normalizedKey.includes('type')) data.Modèle = value;
+                    else if (normalizedKey.includes('puissance') || normalizedKey.includes('moteur')) data.Puissance = value;
+                    else if (normalizedKey.includes('consommation') || normalizedKey.includes('carburant')) data.Consommation = value;
+                    else if (normalizedKey.includes('capacité') || normalizedKey.includes('charge utile')) data.Capacité = value;
+                    else if (normalizedKey.includes('poids') || normalizedKey.includes('masse')) data.Poids = value;
+                    else if (normalizedKey.includes('dimensions') || normalizedKey.includes('encombrement')) data.Dimensions = value;
+                    else if (normalizedKey.includes('prix') || normalizedKey.includes('coût acquisition')) data.Prix = value;
+                    else if (normalizedKey.includes('tco') || normalizedKey.includes('coût total')) data.TCO = value;
+                    else if (normalizedKey.includes('fiabilité') || normalizedKey.includes('mtbf')) data.Fiabilité = value;
+                    else if (normalizedKey.includes('maintenance') || normalizedKey.includes('intervalle service')) data.Maintenance = value;
+                    else {
+                        // For any other key, capitalize first letter
+                        data[key.charAt(0).toUpperCase() + key.slice(1)] = value;
+                    }
+                }
+            });
+            
+            return data;
+        }
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
