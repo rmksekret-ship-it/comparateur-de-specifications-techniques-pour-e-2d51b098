@@ -1,0 +1,292 @@
+{
+  "run_id": "run-1781222220511",
+  "job_index": 2,
+  "params": {
+    "owner_user_id": "user-1774825923424-663",
+    "owner_username": "inso",
+    "owner_display_name": "Inso",
+    "count": 3,
+    "archetype": "tool",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Importez des PDF ou saisissez des données pour comparer les performances, la consommation et les caractéristi…",
+    "notes": "Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.\nUn outil très pratique pour les acheteurs B2B dans l'industrie, axé sur la comparaison détaillée de spécifications techniques.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "",
+    "network_hosting_pool": "",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "new-sites",
+    "provider_space_name": "New Sites",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": false,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "generator",
+      "tool"
+    ],
+    "forced_design_theme": "mono-terminal",
+    "forced_structure_preset": "quick-compare-strip",
+    "site_idea_title": "Comparateur de Spécifications Techniques pour Équipements Industriels",
+    "site_idea_summary": "Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements."
+  },
+  "site_spec": {
+    "slug": "comparateur-de-specifications-techniques-pour-e-2d51b098",
+    "theme": {
+      "name": "Mono Terminal",
+      "slug": "mono-terminal",
+      "eyebrow": "Command Surface",
+      "family": "mono-terminal",
+      "moods": [
+        "technical",
+        "minimal",
+        "focused",
+        "developer"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator"
+      ],
+      "niches": [
+        "developer tools",
+        "validators",
+        "diagnostics",
+        "api utilities",
+        "ops"
+      ],
+      "keywords": [
+        "terminal",
+        "console",
+        "inspect",
+        "trace",
+        "precision"
+      ],
+      "token_index": [
+        "api",
+        "calculator",
+        "command",
+        "console",
+        "developer",
+        "diagnostics",
+        "focused",
+        "inspect",
+        "minimal",
+        "mono",
+        "ops",
+        "precision",
+        "surface",
+        "technical",
+        "terminal",
+        "tool",
+        "tools",
+        "trace",
+        "utilities",
+        "validators"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
+      "display_font": "\"JetBrains Mono\", monospace",
+      "body_font": "\"IBM Plex Sans\", sans-serif",
+      "layout": "swiss",
+      "card_style": "outline",
+      "button_style": "outline",
+      "decor_style": "grid",
+      "hero_template": "1fr 1fr",
+      "seo_template": "1.45fr 0.55fr",
+      "feature_columns": 3,
+      "faq_columns": 4,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "0px",
+      "palette": {
+        "bg": "#06090d",
+        "surface": "rgba(11,16,22,0.92)",
+        "surface_border": "rgba(132,204,22,0.18)",
+        "text": "#e5f0f6",
+        "muted": "#8ea3b2",
+        "accent": "#84cc16",
+        "accent_alt": "#22c55e",
+        "hero_glow": "rgba(132,204,22,0.12)",
+        "button_text": "#061007",
+        "panel_alt": "rgba(255,255,255,0.02)",
+        "shadow": "0 26px 80px rgba(0, 0, 0, 0.34)",
+        "input_fill": "rgba(255,255,255,0.02)"
+      }
+    },
+    "structure": {
+      "name": "Quick Compare Strip",
+      "slug": "quick-compare-strip",
+      "hero_variant": "tool-first",
+      "proof_variant": "metrics",
+      "section_order": [
+        "proof",
+        "features",
+        "faq",
+        "seo"
+      ],
+      "feature_columns": 3,
+      "faq_columns": 2,
+      "family": "compare-strip",
+      "moods": [
+        "direct",
+        "fast",
+        "comparison"
+      ],
+      "archetypes": [
+        "calculator",
+        "tool"
+      ],
+      "niches": [
+        "insurance",
+        "finance",
+        "quotes",
+        "switching"
+      ],
+      "keywords": [
+        "compare",
+        "choices",
+        "fast",
+        "matrix"
+      ],
+      "token_index": [
+        "calculator",
+        "choices",
+        "compare",
+        "comparison",
+        "direct",
+        "faq",
+        "fast",
+        "features",
+        "finance",
+        "first",
+        "insurance",
+        "matrix",
+        "metrics",
+        "proof",
+        "quick",
+        "quotes",
+        "seo",
+        "strip",
+        "switching",
+        "tool"
+      ]
+    },
+    "render_direction": "atlas-report",
+    "render_direction_name": "Atlas Report",
+    "page_blueprint": "briefing-board",
+    "page_blueprint_name": "Briefing Board",
+    "title": "Comparateur de Spécifications Techniques pour Équipements Industriels",
+    "tagline": "Saisie des données et comparaison",
+    "description": "Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.",
+    "feature_prefix": "Bloc",
+    "action": "Utiliser l'outil",
+    "cta_primary": "Comparer les équipements",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "primary",
+        "label": "Texte ou besoin",
+        "type": "text",
+        "placeholder": "Votre besoin principal",
+        "weight": 1.0
+      },
+      {
+        "id": "context",
+        "label": "Contexte",
+        "type": "text",
+        "placeholder": "Situation ou objectif",
+        "weight": 1.0
+      },
+      {
+        "id": "scope",
+        "label": "Intensité",
+        "type": "number",
+        "placeholder": "3",
+        "weight": 0.3
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Atlas Report",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Résultat recommandé",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Atlas Report",
+      "Comparer les équipements",
+      "Résultat recommandé",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Résultat recommandé",
+    "result_unit": "",
+    "runtime_mode": "analysis_tool",
+    "page_variant": "console",
+    "faq_topic": "Comparateur de Spécifications Techniques pour Équipements Industriels",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Comparateur de Spécifications Techniques pour Équipements Industriels ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Comparateur de Spécifications Techniques pour Équipements Industriels et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Comparateur de Spécifications Techniques pour Équipements Industriels | Saisie des données et comparaison</title>\n    <meta name=\"description\" content=\"Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.\">\n    <style>\n        :root {\n            --bg-color: #1a1a1a;\n            --text-color: #e0e0e0;\n            --primary-color: #00bcd4;\n            --secondary-color: #616161;\n            --border-color: #424242;\n            --font-family-mono: 'Roboto Mono', monospace;\n            --font-family-sans: 'Inter', sans-serif;\n            --card-bg: #2a2a2a;\n        }\n        body {\n            font-family: var(--font-family-sans);\n            background-color: var(--bg-color);\n            color: var(--text-color);\n            margin: 0;\n            padding: 0;\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            min-height: 100vh;\n        }\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap');\n        header {\n            background-color: var(--card-bg);\n            padding: 1.5rem 2rem;\n            border-bottom: 1px solid var(--border-color);\n            text-align: center;\n        }\n        header h1 {\n            color: var(--primary-color);\n            font-family: var(--font-family-mono);\n            font-size: 1.8rem;\n            margin: 0;\n        }\n        header p {\n            color: var(--secondary-color);\n            margin-top: 0.5rem;\n            font-size: 0.9rem;\n        }\n        main {\n            flex-grow: 1;\n            display: grid;\n            grid-template-columns: 1fr;\n            gap: 2rem;\n            padding: 2rem;\n            max-width: 1200px;\n            margin: 0 auto;\n        }\n        @media (min-width: 768px) {\n            main {\n                grid-template-columns: 1fr 2fr;\n            }\n        }\n        .card {\n            background-color: var(--card-bg);\n            border: 1px solid var(--border-color);\n            border-radius: 4px;\n            padding: 1.5rem;\n            box-shadow: 0 4px 8px rgba(0,0,0,0.2);\n        }\n        h2 {\n            color: var(--primary-color);\n            font-family: var(--font-family-mono);\n            font-size: 1.4rem;\n            margin-top: 0;\n            margin-bottom: 1.5rem;\n            border-bottom: 1px solid var(--border-color);\n            padding-bottom: 0.5rem;\n        }\n        label {\n            display: block;\n            margin-bottom: 0.5rem;\n            color: var(--text-color);\n            font-size: 0.9rem;\n            font-family: var(--font-family-mono);\n        }\n        textarea, input[type=\"file\"] {\n            width: calc(100% - 20px);\n            padding: 10px;\n            margin-bottom: 1rem;\n            border: 1px solid var(--border-color);\n            background-color: #333;\n            color: var(--text-color);\n            border-radius: 4px;\n            resize: vertical;\n            min-height: 100px;\n            font-family: var(--font-family-mono);\n            font-size: 0.9rem;\n        }\n        input[type=\"file\"] {\n            padding: 8px;\n            cursor: pointer;\n        }\n        input[type=\"file\"]::file-selector-button {\n            background-color: var(--secondary-color);\n            color: var(--text-color);\n            border: none;\n            padding: 8px 12px;\n            border-radius: 3px;\n            cursor: pointer;\n            margin-right: 10px;\n        }\n        input[type=\"file\"]::file-selector-button:hover {\n            background-color: #757575;\n        }\n        button {\n            background-color: var(--primary-color);\n            color: var(--bg-color);\n            border: none;\n            padding: 12px 20px;\n            border-radius: 4px;\n            cursor: pointer;\n            font-size: 1rem;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n        button:hover {\n            background-color: #00acc1;\n        }\n        #tool-result {\n            background-color: var(--card-bg);\n            border: 1px solid var(--border-color);\n            border-radius: 4px;\n            padding: 1.5rem;\n            min-height: 200px;\n            white-space: pre-wrap;\n            font-family: var(--font-family-mono);\n            font-size: 0.85rem;\n            overflow-x: auto;\n            display: flex;\n            flex-direction: column;\n        }\n        #tool-result h3 {\n            color: var(--primary-color);\n            font-size: 1.2rem;\n            margin-top: 0;\n            margin-bottom: 1rem;\n            border-bottom: 1px dotted var(--border-color);\n            padding-bottom: 0.5rem;\n        }\n        .comparison-table {\n            width: 100%;\n            border-collapse: collapse;\n            margin-top: 1rem;\n            font-size: 0.8rem;\n        }\n        .comparison-table th, .comparison-table td {\n            border: 1px solid var(--border-color);\n            padding: 8px;\n            text-align: left;\n        }\n        .comparison-table th {\n            background-color: #3a3a3a;\n            color: var(--primary-color);\n            font-weight: normal;\n            font-family: var(--font-family-mono);\n        }\n        .comparison-table td {\n            background-color: #2a2a2a;\n        }\n        .comparison-table tr:nth-child(even) td {\n            background-color: #2e2e2e;\n        }\n        .section-separator {\n            height: 1px;\n            background-color: var(--border-color);\n            margin: 2rem 0;\n        }\n        .seo-section {\n            padding: 2rem;\n            background-color: var(--card-bg);\n            border-top: 1px solid var(--border-color);\n            text-align: center;\n        }\n        .seo-section h3 {\n            color: var(--primary-color);\n            font-size: 1.2rem;\n            margin-bottom: 1rem;\n        }\n        .seo-section p {\n            color: var(--secondary-color);\n            font-size: 0.85rem;\n            max-width: 800px;\n            margin: 0 auto 1rem auto;\n        }\n        .seo-section ul {\n            list-style: none;\n            padding: 0;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 10px;\n        }\n        .seo-section li {\n            background-color: #333;\n            border: 1px solid var(--border-color);\n            padding: 5px 10px;\n            border-radius: 3px;\n            font-size: 0.75rem;\n            color: var(--text-color);\n            font-family: var(--font-family-mono);\n        }\n        .headline-variants {\n            background-color: var(--card-bg);\n            border: 1px solid var(--border-color);\n            border-radius: 4px;\n            padding: 1.5rem;\n            margin-top: 2rem;\n        }\n        .headline-variants h2 {\n            margin-bottom: 1rem;\n        }\n        .headline-variants ul {\n            list-style: none;\n            padding: 0;\n            margin-bottom: 1rem;\n        }\n        .headline-variants li {\n            margin-bottom: 0.5rem;\n            padding: 8px;\n            background-color: #2a2a2a;\n            border-left: 3px solid var(--primary-color);\n            font-family: var(--font-family-mono);\n            font-size: 0.9rem;\n        }\n        .headline-variants strong {\n            color: var(--primary-color);\n            font-size: 0.8rem;\n            display: inline-block;\n            width: 70px;\n            text-align: right;\n            margin-right: 10px;\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com\">\n    <meta property=\"og:title\" content=\"Comparateur de Spécifications Techniques pour Équipements Industriels\">\n    <meta property=\"og:description\" content=\"Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.\">\n    <meta property=\"og:url\" content=\"https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Comparateur de Spécifications Techniques pour Équipements Industriels\", \"description\": \"Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.\", \"url\": \"https://comparateur-de-specifications-techniques-pour-e-2d51b098.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"comparateur-de-specifications-techniques-pour-e-2d51b098\" data-runtime-mode=\"analysis_tool\">\n    <header>\n        <h1>Comparateur de Spécifications Techniques pour Équipements Industriels</h1>\n        <p>Analysez et comparez les fiches techniques de machines industrielles pour optimiser vos achats et vos investissements.</p>\n    </header>\n\n    <main>\n        <div class=\"card\">\n            <h2>Saisie des données et comparaison</h2>\n            <form id=\"tool-form\">\n                <label for=\"data-input\">Collez les spécifications (texte brut) ou téléchargez un PDF :</label>\n                <textarea id=\"data-input\" placeholder=\"Collez ici les fiches techniques de vos machines. Séparez les blocs de texte pour chaque machine (ex: '---' pour nouvelle machine).\" rows=\"10\"></textarea>\n                <input type=\"file\" id=\"file-upload\" accept=\".pdf\" multiple>\n                <button type=\"submit\" id=\"tool-submit\">Comparer les équipements</button>\n            </form>\n        </div>\n\n        <div class=\"card\">\n            <h2>Résultats de la comparaison</h2>\n            <div id=\"tool-result\">\n                <h3 id=\"result-headline\">Aperçu des performances comparées</h3>\n                <p>Vos comparaisons détaillées apparaîtront ici. L'outil extraira les données clés et les présentera sous forme de tableau ou de liste structurée pour une analyse rapide.</p>\n            </div>\n        </div>\n\n        <div class=\"section-separator\"></div>\n\n        <div class=\"headline-variants card\">\n            <h2>Titres optimisés pour votre communication</h2>\n            <p>Découvrez différentes approches pour présenter votre proposition de valeur. Ces titres sont conçus pour capter l'attention selon votre objectif.</p>\n\n            <h3>Variantes SEO:</h3>\n            <ul>\n                <li><strong>SEO:</strong> Comparateur Fiches Techniques Industrielles: Optimisez vos Achats Machines</li>\n                <li><strong>SEO:</strong> Analyse Spécifications Équipements BTP & Industrie: Gagnez en Efficacité</li>\n                <li><strong>SEO:</strong> Comparaison Technique Industrielle: Guide d'Achat Équipement Professionnel</li>\n            </ul>\n\n            <h3>Variantes \"Clickbait\":</h3>\n            <ul>\n                <li><strong>Clickbait:</strong> L'Erreur Fatale que Vous Faites en Achetant Vos Machines Industrielles (Jusqu'à Maintenant !)</li>\n                <li><strong>Clickbait:</strong> Secret Révélé: Comment 1 Seule Astuce Peut Doubler la Rentabilité de Votre Parc Machines</li>\n                <li><strong>Clickbait:</strong> Ne Payez Plus Jamais Trop Cher Pour Vos Équipements Industriels: Voici Pourquoi</li>\n            </ul>\n\n            <h3>Variantes \"Expert\":</h3>\n            <ul>\n                <li><strong>Expert:</strong> Optimisation Stratégique des Acquisitions d'Actifs Industriels par l'Analyse Spécifique</li>\n                <li><strong>Expert:</strong> Ingénierie Comparée: Décryptage des Performances pour la Sélection d'Équipements de Pointe</li>\n                <li><strong>Expert:</strong> Architecture Technologique des Machines: Évaluation Comparative et Synthèse Décisionnelle</li>\n            </ul>\n\n            <h3>Variantes \"Soft\":</h3>\n            <ul>\n                <li><strong>Soft:</strong> Trouvez l'Équipement Idéal pour Votre Activité, Simplement et Rapidement</li>\n                <li><strong>Soft:</strong> Facilitez Vos Décisions d'Achat avec une Comparaison Claire de Machines Industrielles</li>\n                <li><strong>Soft:</strong> Un Outil Pratique pour Choisir Vos Équipements Industriels en Toute Confiance</li>\n            </ul>\n\n            <h3>Variantes \"Commercial\":</h3>\n            <ul>\n                <li><strong>Commercial:</strong> Décuplez Votre ROI: Notre Comparateur Révolutionne Vos Achats Industriels</li>\n                <li><strong>Commercial:</strong> Gagnez en Compétitivité: L'Outil Essentiel pour Vos Acquisitions d'Équipements</li>\n                <li><strong>Commercial:</strong> Performez Mieux, Dépensez Moins: Comparez et Achetez Malin</li>\n            </ul>\n        </div>\n    </main>\n\n    <div class=\"seo-section\">\n        <h3>Optimisation des achats B2B avec notre comparateur de fiches techniques</h3>\n        <p>Dans l'environnement industriel compétitif, chaque décision d'investissement compte. Notre plateforme vous permet d'analyser en profondeur les spécifications techniques des machines, des équipements de production aux engins de BTP. Ne vous fiez plus aux seules brochures : utilisez une comparaison structurée pour évaluer la consommation énergétique, la capacité de production, les normes de sécurité, la maintenance préventive, le coût total de possession (TCO) et d'autres critères essentiels. Que vous soyez un acheteur industriel, un responsable de parc machines ou un ingénieur d'études, notre outil est conçu pour vous offrir une vision claire et objective, facilitant ainsi des choix stratégiques éclairés et rentables pour votre entreprise en France.</p>\n        <ul>\n            <li>comparateur machine industrielle</li>\n            <li>fiches techniques équipement btp</li>\n            <li>analyse comparative machines production</li>\n            <li>optimisation achat industriel</li>\n            <li>comparaison performance machines</li>\n            <li>investissement équipement usine</li>\n            <li>sélection matériel professionnel</li>\n            <li>comparer tracteur agricole spécifications</li>\n            <li>comparer pelle hydraulique données techniques</li>\n            <li>analyse consommation machines</li>\n            <li>comparateur engins TP</li>\n            <li>logiciel comparaison industrielle</li>\n            <li>outil aide décision achat machine</li>\n            <li>spécifications techniques B2B</li>\n            <li>comparatif chariots élévateurs</li>\n        </ul>\n    </div>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n            compareData();\n        });\n\n        document.getElementById('file-upload').addEventListener('change', function(event) {\n            const files = event.target.files;\n            if (files.length > 0) {\n                let allText = '';\n                let filesProcessed = 0;\n                for (let i = 0; i < files.length; i++) {\n                    const file = files[i];\n                    if (file.type === \"application/pdf\") {\n                        // In a real-world scenario, you'd use a library like pdf.js to extract text.\n                        // For this in-browser only example, we'll simulate PDF processing for simplicity.\n                        // A more robust solution would involve server-side PDF parsing.\n                        allText += `--- PDF '${file.name}' (simulation d'extraction) ---\\n`;\n                        allText += `Nom: ${file.name}\\nTaille: ${Math.round(file.size / 1024)} Ko\\n`;\n                        allText += `Capacité: [Valeur Estimée]\\nPoids: [Valeur Estimée]\\nConsommation: [Valeur Estimée]\\n`;\n                        allText += `Puissance: [Valeur Estimée]\\nFiabilité: [Valeur Estimée]\\nCoût: [Valeur Estimée]\\n`;\n                        allText += `--- Fin de simulation PDF '${file.name}' ---\\n\\n`;\n                        filesProcessed++;\n                        if (filesProcessed === files.length) {\n                             document.getElementById('data-input').value = allText.trim();\n                        }\n                    } else {\n                        // For other file types, or if no PDF.js, simply inform user or ignore.\n                        console.warn(`Type de fichier non pris en charge pour l'extraction de texte: ${file.type}`);\n                        // Optionally, add a placeholder or error message\n                        allText += `--- Fichier non-PDF ignoré: ${file.name} ---\\n\\n`;\n                        filesProcessed++;\n                        if (filesProcessed === files.length) {\n                             document.getElementById('data-input').value = allText.trim();\n                        }\n                    }\n                }\n            }\n        });\n\n        function compareData() {\n            const rawData = document.getElementById('data-input').value.trim();\n            const resultDiv = document.getElementById('tool-result');\n\n            if (!rawData) {\n                resultDiv.innerHTML = '<h3>Aperçu des performances comparées</h3><p>Veuillez coller des données ou télécharger un fichier pour commencer la comparaison.</p>';\n                return;\n            }\n\n            const machines = rawData.split(/---+/g).filter(block => block.trim() !== '');\n            const parsedData = machines.map(parseMachineData);\n\n            if (parsedData.length === 0) {\n                resultDiv.innerHTML = '<h3>Aperçu des performances comparées</h3><p>Aucune donnée valide n\\'a été trouvée pour la comparaison. Veuillez vérifier le format de vos entrées.</p>';\n                return;\n            }\n\n            resultDiv.innerHTML = '<h3>Résultats de la Comparaison Détaillée</h3>';\n\n            if (parsedData.length === 1) {\n                resultDiv.innerHTML += '<p>Une seule machine détectée. Pour une comparaison, veuillez ajouter au moins deux ensembles de spécifications.</p>';\n                resultDiv.innerHTML += `<h4>${parsedData[0].Nom || 'Machine Unique'}</h4>`;\n                resultDiv.innerHTML += '<ul style=\"list-style: none; padding: 0;\">';\n                for (const key in parsedData[0]) {\n                    if (parsedData[0].hasOwnProperty(key)) {\n                        resultDiv.innerHTML += `<li style=\"margin-bottom: 0.3rem;\"><strong style=\"color: var(--primary-color); display: inline-block; width: 120px;\">${key}:</strong> ${parsedData[0][key]}</li>`;\n                    }\n                }\n                resultDiv.innerHTML += '</ul>';\n                return;\n            }\n\n            const allKeys = [...new Set(parsedData.flatMap(Object.keys))];\n            const relevantKeys = ['Nom', 'Modèle', 'Puissance', 'Consommation', 'Capacité', 'Poids', 'Dimensions', 'Prix', 'TCO', 'Fiabilité', 'Maintenance'].filter(key => allKeys.includes(key));\n            \n            let tableHtml = '<table class=\"comparison-table\"><thead><tr>';\n            tableHtml += '<th>Caractéristique</th>';\n            parsedData.forEach((machine, index) => {\n                tableHtml += `<th>Machine ${index + 1}<br>${machine.Nom || 'Non spécifié'}</th>`;\n            });\n            tableHtml += '</tr></thead><tbody>';\n\n            relevantKeys.forEach(key => {\n                tableHtml += `<tr><td>${key}</td>`;\n                parsedData.forEach(machine => {\n                    tableHtml += `<td>${machine[key] || '-'}</td>`;\n                });\n                tableHtml += '</tr>';\n            });\n\n            tableHtml += '</tbody></table>';\n            resultDiv.innerHTML += tableHtml;\n        }\n\n        function parseMachineData(textBlock) {\n            const data = {};\n            const lines = textBlock.split('\\n').map(line => line.trim()).filter(line => line.length > 0);\n            \n            lines.forEach(line => {\n                const parts = line.split(':');\n                if (parts.length >= 2) {\n                    const key = parts[0].trim().replace(/\\s+/g, ' '); // Normalize spaces\n                    const value = parts.slice(1).join(':').trim();\n                    \n                    // Simple heuristic to clean up keys for common attributes\n                    let normalizedKey = key.toLowerCase();\n                    if (normalizedKey.includes('nom') || normalizedKey.includes('désignation')) data.Nom = value;\n                    else if (normalizedKey.includes('modèle') || normalizedKey.includes('type')) data.Modèle = value;\n                    else if (normalizedKey.includes('puissance') || normalizedKey.includes('moteur')) data.Puissance = value;\n                    else if (normalizedKey.includes('consommation') || normalizedKey.includes('carburant')) data.Consommation = value;\n                    else if (normalizedKey.includes('capacité') || normalizedKey.includes('charge utile')) data.Capacité = value;\n                    else if (normalizedKey.includes('poids') || normalizedKey.includes('masse')) data.Poids = value;\n                    else if (normalizedKey.includes('dimensions') || normalizedKey.includes('encombrement')) data.Dimensions = value;\n                    else if (normalizedKey.includes('prix') || normalizedKey.includes('coût acquisition')) data.Prix = value;\n                    else if (normalizedKey.includes('tco') || normalizedKey.includes('coût total')) data.TCO = value;\n                    else if (normalizedKey.includes('fiabilité') || normalizedKey.includes('mtbf')) data.Fiabilité = value;\n                    else if (normalizedKey.includes('maintenance') || normalizedKey.includes('intervalle service')) data.Maintenance = value;\n                    else {\n                        // For any other key, capitalize first letter\n                        data[key.charAt(0).toUpperCase() + key.slice(1)] = value;\n                    }\n                }\n            });\n            \n            return data;\n        }\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
